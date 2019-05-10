@@ -84,6 +84,10 @@ class App extends Component {
 
           <Preview html={html} view={view === 'preview'} />
         </div>
+
+        <footer>
+          <small>&copy; 2019; Joseph Morse <a href="https://github.com/jnmorse">GitHub</a></small>
+        </footer>
       </>
     )
   }
