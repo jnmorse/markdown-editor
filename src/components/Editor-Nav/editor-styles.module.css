@@ -27,6 +27,7 @@
 
 .root button:disabled {
   border-color: rgba(0, 0, 0, 0);
+  cursor: default;
 }
 
 @media screen and (min-width: 700px) {
