@@ -1,11 +1,9 @@
 import React from 'react'
 
-import styles from './Editor.module.css'
-
-const Editor = ({ text, handleChange, ...props }) => {
+const Editor = ({ text, handleChange, view, ...props }) => {
   return (
     <textarea
-      className={styles.root}
+      className={view ? 'show' : 'hide'}
       id="editor"
       {...props}
       value={text}

@@ -1,6 +1,5 @@
 .root {
   display: inline-block;
-  width: 100vw;
   padding: 0em 1em 0.5em;
 }
 
@@ -16,13 +15,9 @@
   display: inlin-block;
 }
 
-.root a {
-  text-decoration: none;
-  color: black;
-}
-
-.root a,
-.root label {
+.root button {
+  all: unset;
+  font-size: 1.3em;
   cursor: pointer;
 }
 

@@ -32,7 +32,8 @@ marked.setOptions({
 class App extends Component {
   state = {
     text: '',
-    html: { __html: marked('') }
+    html: { __html: marked('') },
+    view: 'editor'
   }
 
   async loadData() {
@@ -57,20 +58,31 @@ class App extends Component {
     })
   }
 
+  handleToggleShow(view) {
+    this.setState({
+      view
+    })
+  }
+
   render() {
-    const { text, html } = this.state
+    const { text, html, view } = this.state
 
     return (
       <>
-        <EditorNav />
+        <header>
+          <h1>Markdown Previewer</h1>
+        </header>
+
+        <EditorNav handleToggleShow={(view) => this.handleToggleShow(view)} />
+
         <div className={styles.container}>
           <Editor
             text={text}
+            view={view === 'editor'}
             handleChange={event => this.handleChange(event)}
-            autoFocus
           />
 
-          <Preview html={html} />
+          <Preview html={html} view={view === 'preview'} />
         </div>
       </>
     )
