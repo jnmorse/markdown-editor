@@ -3,7 +3,20 @@
   "version": "1.0.0",
   "description": "Markdown Previewer Project",
   "keywords": [],
+  "homepage": "https://jnmorse.github.io/markdown-editor",
   "main": "src/index.js",
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test --env=jsdom"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "highlight.js": "9.15.6",
     "marked": "0.6.2",
@@ -13,17 +26,5 @@
   },
   "devDependencies": {
     "typescript": "3.3.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }
