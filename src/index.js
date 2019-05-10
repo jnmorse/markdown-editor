@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App'
+import './lib/load-cdn'
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(<App />, rootElement)

@@ -1,7 +1,7 @@
 {
   "name": "markdown-editor",
   "version": "1.0.0",
-  "description": "This is ment to be more of template for FreeCodeCamp React based projects",
+  "description": "Markdown Previewer Project",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

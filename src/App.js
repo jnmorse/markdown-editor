@@ -7,6 +7,7 @@ import 'highlight.js/styles/github.css'
 
 import initialMarkdown from './initialMarkdown.md'
 
+
 import EditorNav from './components/Editor-Nav'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -30,8 +31,22 @@ marked.setOptions({
 
 class App extends Component {
   state = {
-    text: initialMarkdown,
-    html: { __html: marked(initialMarkdown) }
+    text: '',
+    html: { __html: marked('') }
+  }
+
+  async loadData() {
+    const request = await fetch(initialMarkdown)
+    const markDown = await request.text()
+
+    this.setState({
+      text: markDown,
+      html: { __html: marked(markDown) }
+    })
+  }
+
+  componentDidMount() {
+    this.loadData()
   }
 
   handleChange(event) {
