@@ -18,7 +18,15 @@
 .root button {
   all: unset;
   font-size: 1.3em;
+  border: 1px solid rgba(20, 20, 20, 0.3);
+  border-radius: 0.3em;
+  padding: 0.5em;
+  color: var(--white);
   cursor: pointer;
+}
+
+.root button:disabled {
+  border-color: rgba(0, 0, 0, 0);
 }
 
 @media screen and (min-width: 700px) {

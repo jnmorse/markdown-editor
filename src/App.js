@@ -33,7 +33,8 @@ class App extends Component {
   state = {
     text: '',
     html: { __html: marked('') },
-    view: 'editor'
+    view: 'editor',
+    disableNav: window.innerWidth > 700 ? true : false
   }
 
   async loadData() {
@@ -48,6 +49,26 @@ class App extends Component {
 
   componentDidMount() {
     this.loadData()
+    window.addEventListener('resize', event => this.handleResize(event))
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', event => this.handleResize(event))
+  }
+
+  handleResize(event) {
+    const { innerWidth: windowWidth } = event.target
+
+    if (windowWidth > 700) {
+      return this.setState({
+        disableNav: true
+      })
+    }
+
+    return this.setState({
+      disableNav: false,
+      view: 'editor'
+    })
   }
 
   handleChange(event) {
@@ -65,7 +86,7 @@ class App extends Component {
   }
 
   render() {
-    const { text, html, view } = this.state
+    const { text, html, view, disableNav } = this.state
 
     return (
       <>
@@ -73,7 +94,7 @@ class App extends Component {
           <h1>Markdown Previewer</h1>
         </header>
 
-        <EditorNav handleToggleShow={(view) => this.handleToggleShow(view)} />
+        <EditorNav disable={disableNav} handleToggleShow={(view) => this.handleToggleShow(view)} />
 
         <div className={styles.container}>
           <Editor
