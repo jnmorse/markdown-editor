@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+}
+
+.container textarea:focus {
+  display: block;
+}
+
+.container :global(#editor) {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.container :global(#editor:focus) {
+  flex: 1 1;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+.container :global(#preview) {
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.container :global(#preview:focus) {
+  flex: 1 1;
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .container :global(#editor) {
+    flex: 1;
+    width: auto;
+    margin: 0 5px;
+    height: auto;
+  }
+
+  .container :global(#preview) {
+    flex: 1;
+    width: auto;
+    margin: 0 5px;
+    height: auto;
+  }
+}

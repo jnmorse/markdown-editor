@@ -1,0 +1,34 @@
+.root {
+  display: inline-block;
+  width: 100vw;
+  padding: 0em 1em 0.5em;
+}
+
+.root ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, max-content));
+  padding: 0;
+  list-style-type: none;
+  row-gap: 20px;
+}
+
+.root li {
+  display: inlin-block;
+}
+
+.root a {
+  text-decoration: none;
+  color: black;
+}
+
+.root a,
+.root label {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 700px) {
+  .root ul {
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+}

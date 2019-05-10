@@ -1,0 +1,25 @@
+html {
+  --black: rgb(20, 20, 20);
+  --white: hsl(0, 0%, 97%);
+}
+
+body {
+  margin: 60px 0;
+  font-size: calc(14px * 0.2vw);
+  background-color: var(--white);
+  max-width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
