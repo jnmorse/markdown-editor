@@ -2,10 +2,18 @@ import marked from 'marked'
 
 const Renderer = new marked.Renderer()
 
-Renderer.link = (href, title, string) => {
+export const linkRenderer = (href, title, string) => {
   title = title || ''
 
-  return `<a target="_blank" rel="noopener noreferer" href="${href}" title="${title}">${string}</a>`
+  const external = href.match(/^https?:\/\//)
+
+  if (external) {
+    return `<a target="_blank" rel="noopener noreferer" href="${href}" title="${title}">${string}</a>`
+  } else {
+    return `<a href="${href}" title="${title}">${string}</a>`
+  }
 }
+
+Renderer.link = linkRenderer
 
 export default Renderer
